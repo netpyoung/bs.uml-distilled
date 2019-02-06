@@ -1,0 +1,9 @@
+@startuml
+
+[*] -> Wait
+Wait -> Lock : candle removed [door closed] / reveal lock
+Lock --> Open : key turned [candle in] / open safe
+Open --> Wait : safe closed
+Lock --> [*] : key turned [candle out] / release killer rabbit
+
+@enduml

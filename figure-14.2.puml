@@ -1,0 +1,23 @@
+@startuml
+
+
+skinparam componentStyle uml2
+
+[Till]
+
+[MessageQueue]
+
+component SalesServer {
+    [TrasactionProcessor]
+    [AccountingDriver]
+}
+
+[AccountingSystem]
+
+Till -(0- MessageQueue
+MessageQueue -(0 SalesServer
+SalesServer -> TrasactionProcessor
+TrasactionProcessor -(0 AccountingDriver
+AccountingDriver -(0- AccountingSystem
+
+@enduml

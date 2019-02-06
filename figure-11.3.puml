@@ -1,0 +1,15 @@
+@startuml
+
+start
+:Reveive Order;
+fork
+    :Fill Order;
+    :Deliver Order;
+fork again
+    :Send Invoke\n(Order::sendInvoice);
+    :Receive Payment;
+end fork
+:Close Order;
+end
+
+@enduml

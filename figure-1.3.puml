@@ -1,0 +1,26 @@
+@startuml
+
+object WelcomeVisitors
+object RecentChanges
+object FindPage
+note top: ! non-normative
+
+object SomeWikiPage
+object VisualTour
+object EditPage
+
+
+WelcomeVisitors <--> RecentChanges
+WelcomeVisitors <--> FindPage
+RecentChanges <-> FindPage : navigation
+
+FindPage --> SomeWikiPage :submit search
+FindPage <-- SomeWikiPage
+
+RecentChanges --> SomeWikiPage : for recent changed pages
+
+SomeWikiPage --> EditPage
+SomeWikiPage <-- EditPage : save button
+
+SomeWikiPage <--> VisualTour
+@enduml

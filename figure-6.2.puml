@@ -1,0 +1,30 @@
+@startuml
+
+object "engineering: Organization" as eOrganization {
+    location = "Boston"
+}
+
+object "tools: Organization" as tOrganization {
+    location = "Chicago"
+}
+
+object "apps: Organization" as aOrganization {
+    location = "Saba"
+}
+
+
+object "Don: Person" as dPerson {
+    location = "Champaign"
+}
+
+object "John: Person" as jPerson {
+    location = "Champaign"
+}
+
+eOrganization -- tOrganization
+eOrganization -- aOrganization
+
+tOrganization -- dPerson
+tOrganization -- jPerson
+
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+
+class Set<T> {
+    + insert(T)
+    + remove(T)
+}
+
+@enduml

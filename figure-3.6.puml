@@ -1,0 +1,6 @@
+@startuml
+
+object Car
+note left: includes pick-ups\nand SUVs but not\nmotorbikes
+
+@enduml

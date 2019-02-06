@@ -1,0 +1,37 @@
+@startuml
+
+actor TradingManager
+actor AccountingSystem
+actor Trader
+actor SalesPerson
+
+rectangle  {
+    storage SetLimits
+    storage AnalyzeRisk
+    storage PriceDeal
+    storage CaptureDeal
+    storage UpdateAccounts
+    storage ValueDeal
+}
+
+TradingManager - SetLimits
+Trader - AnalyzeRisk
+Trader - PriceDeal
+Trader - CaptureDeal
+
+AnalyzeRisk .> ValueDeal : <<include>>
+PriceDeal .> ValueDeal : <<include>>
+
+UpdateAccounts - AccountingSystem
+
+PriceDeal - SalesPerson
+CaptureDeal - SalesPerson
+
+' ordering
+SetLimits -[hidden] UpdateAccounts
+SetLimits -[hidden]-> AnalyzeRisk
+AnalyzeRisk -[hidden]-> PriceDeal
+PriceDeal -[hidden]-> CaptureDeal
+TradingManager -[hidden]-> Trader
+
+@enduml

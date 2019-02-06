@@ -1,0 +1,22 @@
+@startuml
+
+
+package Control {
+    class Button
+    class CheckBox
+    
+    interface OnOff {
+        + turnOn()
+        + turnOff()
+        + isOn()
+        + isOff()
+    }
+}
+
+Button .> OnOff
+CheckBox .> OnOff
+
+OnOff <|... "Furnace::Heater"
+OnOff <|... "Lighting::Light"
+
+@enduml

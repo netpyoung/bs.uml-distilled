@@ -1,0 +1,15 @@
+@startuml
+
+' ref: http://plantuml.com/object-diagram
+
+object Feature
+object StructuralFeature
+object BehaviouralFeature
+object Parameter
+
+Feature <|-- StructuralFeature
+Feature <|-- BehaviouralFeature
+
+BehaviouralFeature "0..1" *-- "*" Parameter : {ordered}
+
+@enduml

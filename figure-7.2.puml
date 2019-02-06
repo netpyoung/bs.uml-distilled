@@ -1,0 +1,31 @@
+@startuml
+
+package "leasing\npresentation" as leasing_p
+package "leasing domain" as leasing_d
+package "leasing data\nmapper" as leasing_m
+
+package "asset\npresentation" as asset_p
+package "asset domain" as asset_d
+package "asset data\nmapper" as asset_m
+
+package database
+
+
+package "UI\nframework" as ui
+
+leasing_p .> asset_p
+leasing_p ..> ui
+asset_p ..> ui
+
+leasing_p ...> leasing_d
+leasing_d <.. leasing_m
+leasing_m ..> database
+
+asset_p ...> asset_d
+asset_d <.. asset_m
+asset_m ..> database
+
+leasing_d .> asset_d
+leasing_m .> asset_m
+
+@enduml

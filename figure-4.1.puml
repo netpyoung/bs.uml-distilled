@@ -1,0 +1,25 @@
+@startuml
+
+[-> Order: calculatePrice
+activate Order
+Order -> OrderLine : getQuantity
+    activate OrderLine
+    deactivate OrderLine
+Order -> OrderLine : getProduct
+    activate OrderLine
+Order <-- OrderLine : Product
+    deactivate OrderLine
+Order -> Product : getPricingDetails
+    activate Product
+    deactivate Product
+Order -> Order : calculateBasePrice  
+activate Order
+deactivate Order
+Order -> Order : calculateDiscounts  
+activate Order
+Order -> Customer : getDiscountInfo  
+    activate Customer
+    deactivate Customer
+deactivate Order
+
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+
+package util
+
+package util2 [
+    Date2
+]
+
+package util3 {
+    card Date3
+}
+
+
+package java::util4 {
+    card Date4
+}
+
+package java5 {
+    package util5 {
+        card Date5
+    }
+}
+
+card "java::util::Date"
+
+@enduml

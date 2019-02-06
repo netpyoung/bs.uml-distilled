@@ -1,0 +1,10 @@
+@startuml
+
+class Attendance {
+    - attentiveness
+}
+
+Person "1" - "*" Attendance
+Attendance "2..*" - "1" Meeting
+
+@enduml

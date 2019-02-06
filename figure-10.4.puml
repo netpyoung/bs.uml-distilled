@@ -1,0 +1,16 @@
+@startuml
+
+
+state EnterConnectionDetails {
+    [*] --> EnterPhoneNumber
+    EnterPhoneNumber -> ChooseSharedOrSolo : next
+    ChooseSharedOrSolo -> EnterPhoneNumber : back
+    ChooseSharedOrSolo -> EnterName : next
+    EnterName -> ChooseSharedOrSolo : back
+}
+
+EnterName -> ShowConnections : save
+ShowConnections -> EnterConnectionDetails : new
+EnterConnectionDetails --> ShowConnections : cancel
+
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+[->Scenario : evaluate
+activate Scenario
+    create BonusCalculator
+    Scenario -> BonusCalculator
+        activate BonusCalculator
+        BonusCalculator -> "Brace: Salseman"
+        deactivate BonusCalculator
+    destroy BonusCalculator
+    Scenario -> "match: PayPeriod" : addToPayList(Bruce)
+    Scenario -> "match: PayPeriod" : calculatePayrool
+        activate "match: PayPeriod"
+    "Brace: Salseman" o<- "match: PayPeriod" : calulatePay
+    note left: emplyee
+        deactivate "match: PayPeriod"
+deactivate Scenario
+@enduml

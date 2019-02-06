@@ -1,0 +1,21 @@
+@startuml
+|Fullfillment|
+|Customer Service|
+start
+:Reveive Order;
+fork
+    :;
+|Fullfillment|
+    :Fill Order;
+    :Deliver Order;
+|Customer Service|
+fork again
+    :Send Invoke;
+|Finance|
+    :Receive Payment;
+end fork
+|Customer Service|
+:Close Order;
+end
+
+@enduml

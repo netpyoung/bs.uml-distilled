@@ -1,0 +1,7 @@
+@startuml
+
+Date "0..1" <- "*" Order : + dateRecieved()
+Order -> "1" Boolean : + isPrepaid()
+Order "1" -- "*" OrderLine : + lineItems(): {ordered}
+
+@enduml

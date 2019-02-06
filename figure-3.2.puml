@@ -1,0 +1,9 @@
+@startuml
+
+class Order {
+    + dataRecieved() : Date [0..1]
+    + isPrepaid() : Boolean [1]
+    + lineItems() : OrderLine [*] {oredered}
+}
+
+@enduml

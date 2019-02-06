@@ -1,0 +1,46 @@
+@startuml
+
+note "{if Order.customer.getCreditRating is\n 'poor' then Order.isPrepai must be\n true}" as n
+Order .. n
+Order "1" --> "*{ordered}" OrderLine : lineItems
+Order "*" -> "1" Customer
+OrderLine "*" --> "1" Product
+Customer <|-- CorperateCustomer
+Customer <|-- PersonalCustomer
+CorperateCustomer "*" --> "0..1" Employee : salesRep
+
+
+class Order {
+    - dataRecieved: Data[0..1]
+    - isPrepaid: Boolean[1]
+    - number: String[1]
+    - price: Money
+    + dispatch()
+    + close()
+}
+
+class OrderLine {
+    - quantity: Interger
+    - price: Money
+}
+
+class Product
+
+class Customer {
+    - name [1]
+    - address [0..1]
+    + getCreditRating(): String
+}
+
+class CorperateCustomer {
+    - contractName
+    - creditRating
+    - creditLimit
+    + billForMonth(Integer)
+    + remind()
+}
+class PersonalCustomer {
+    - creditCardNumber
+    + getCreditRating() == "poor"
+}
+@enduml

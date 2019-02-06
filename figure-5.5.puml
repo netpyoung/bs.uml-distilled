@@ -1,0 +1,11 @@
+@startuml
+
+class DateRange {
+    - start: Date
+    - end: Date
+    # /length: Integer
+}
+
+note right: {length = end - start}
+
+@enduml

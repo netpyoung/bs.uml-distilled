@@ -1,0 +1,31 @@
+@startuml
+
+interface Collection {
+    + equals()
+    + add()
+}
+
+interface List {
+    + get()
+}
+
+class Order {
+    - items: List [*]
+}
+
+abstract AbstractList {
+    {abstract} + equals()
+    {abstract} + get()
+    {abstract} + add()
+}
+
+class ArrayList {
+    + get()
+    + add()
+}
+
+Collection <|-- List
+Order .> List
+List <|. AbstractList
+AbstractList <|-- ArrayList
+@enduml

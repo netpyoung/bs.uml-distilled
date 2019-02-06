@@ -1,0 +1,13 @@
+@startuml
+
+partition DeliverOrder {
+    :Order;
+    if () then ([Rush Order])
+        :Overnight Delivery;
+    else ([else])
+        :Regular Delivery;
+    endif
+    :Order;
+}
+
+@enduml

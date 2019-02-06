@@ -1,0 +1,19 @@
+@startuml
+
+start
+:Receive Order;
+fork
+    :Fill Order;
+    if () then ([primary order])
+        :Overnight Delivery;
+    else
+        :Regular Delivery;
+    endif
+fork again
+    :Send Invoice;
+    :Receive Payment;
+end fork
+:Close Order;
+end
+
+@enduml

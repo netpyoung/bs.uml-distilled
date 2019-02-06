@@ -1,0 +1,14 @@
+@startuml
+
+package Application
+package "Database\nGateway" as database
+package "Oracle\nGateway" as oracle
+package "SQL Server\nGateway" as sql
+package "Test Stub\nGateway" as test
+
+Application .> database
+database <|.. oracle
+database <|.. sql
+database <|.. test
+
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+
+[Widget]
+
+skinparam componentStyle uml2
+
+[Widget2]
+
+@enduml

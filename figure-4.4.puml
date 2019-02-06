@@ -1,0 +1,28 @@
+@startuml
+
+participant Order
+participant "careful: Distributor" as cDistributor
+participant "regular: Distributor" as rDistributor
+participant Messenger
+
+[->Order : dispatch
+activate Order
+loop for each line item
+    alt value -> $10000
+        Order -> cDistributor: dispatch
+        activate cDistributor
+        deactivate cDistributor
+    else else
+        Order -> rDistributor : dispatch
+        activate rDistributor
+        deactivate rDistributor
+    end
+end
+
+opt needsConfirmation
+    Order -> Messenger : confirm
+    activate Messenger
+    deactivate Messenger
+deactivate Order
+end
+@enduml

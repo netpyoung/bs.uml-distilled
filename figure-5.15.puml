@@ -1,0 +1,10 @@
+@startuml
+
+class Employment {
+    - period: dateRange
+}
+
+Person "1" - "*" Employment
+Employment "*" - "1" Company
+
+@enduml

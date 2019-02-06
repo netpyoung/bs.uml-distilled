@@ -1,0 +1,18 @@
+@startuml
+
+package presentation
+package "UI Framework" as ui
+package domain
+package "data mapper" as data
+package database
+package leasing
+package asset
+
+presentation .> ui
+presentation ..> domain
+domain <.. data
+data ..> database
+
+leasing ..> asset
+
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+
+[-> Handler : query database
+activate Handler
+    create QueryCommand
+    Handler -> QueryCommand : new
+    activate QueryCommand
+        create DatabaseStatement
+        QueryCommand -> DatabaseStatement : new
+        QueryCommand -> DatabaseStatement : execute
+            activate DatabaseStatement
+        QueryCommand <-- DatabaseStatement : results
+            deactivate DatabaseStatement
+        QueryCommand -> QueryCommand : extract results
+            activate QueryCommand
+            deactivate QueryCommand
+        QueryCommand -> DatabaseStatement : close
+        destroy DatabaseStatement
+    Handler <-- QueryCommand : results
+    deactivate QueryCommand
+    destroy QueryCommand
+deactivate Handler
+
+@enduml

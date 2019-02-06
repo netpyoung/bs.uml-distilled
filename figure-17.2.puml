@@ -1,0 +1,27 @@
+@startuml
+
+concise "Pump" as Pump
+concise "Hotplate" as Hotplate
+
+@0
+Pump is Off
+Hotplate is Off
+
+@30
+Pump is On
+Hotplate -> Pump
+
+@40
+Hotplate is On
+Hotplate -> Pump
+Hotplate@30 <-> @40 : {>10 s}
+
+@70
+Pump is Off : waterEmpty
+
+@100
+Hotplate is Off
+Hotplate@70 <-> @100 : {<15m}
+
+
+@enduml

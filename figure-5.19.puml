@@ -1,0 +1,12 @@
+@startuml
+
+class Set<T> {
+    + insert(T)
+    + remove(T)
+}
+
+class EmployeeSet
+
+Set "<<bind>>" <-- "<T:Employee>" EmployeeSet
+
+@enduml

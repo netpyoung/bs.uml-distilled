@@ -1,0 +1,42 @@
+@startuml
+
+object Diagram
+    object StructuralDiagram
+        object ClassDiagram
+        object ComponentDiagram
+        object CompositeStructureDiagram
+        object DeploymentDiagram
+        object ObjectDiagram
+        object PackageDiagram
+    object BehaviouralDiagram
+        object ActivityDiagram
+        object UseCaseDiagram
+        object StateMachineDiagram
+        object InteractionDiagram
+            object SequenceDiagram
+            object CommunicationDiagram
+            object InteractionOverviewDiagram
+            object TimingDiagram
+
+Diagram <|-- StructuralDiagram
+Diagram <|-- BehaviouralDiagram
+
+StructuralDiagram <|-- ClassDiagram
+StructuralDiagram <|-- ComponentDiagram
+StructuralDiagram <|-- CompositeStructureDiagram
+StructuralDiagram <|-- DeploymentDiagram
+StructuralDiagram <|-- ObjectDiagram
+StructuralDiagram <|-- PackageDiagram
+
+BehaviouralDiagram <|-- ActivityDiagram
+BehaviouralDiagram <|-- UseCaseDiagram
+BehaviouralDiagram <|-- StateMachineDiagram
+BehaviouralDiagram <|-- InteractionDiagram
+
+InteractionDiagram <|-- SequenceDiagram
+InteractionDiagram <|-- CommunicationDiagram
+InteractionDiagram <|-- InteractionOverviewDiagram
+InteractionDiagram <|-- TimingDiagram
+
+
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class Order {
+    Line Items [*]
+}
+circle List
+
+Order .> List
+List - ArrayList
+ArrayList --() Collection
+@enduml

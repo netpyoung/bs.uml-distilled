@@ -1,0 +1,8 @@
+@startuml
+class Party {
+    - location
+}
+
+Party <|-- Person
+Party "* children" <|-- "0..1 parent" Organization
+@enduml

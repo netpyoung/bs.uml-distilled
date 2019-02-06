@@ -1,0 +1,8 @@
+@startuml
+
+enum Color {
+    red
+    white
+    blue
+}
+@enduml

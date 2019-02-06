@@ -1,0 +1,11 @@
+@startuml
+
+
+state Typing
+Typing : entry/highlight all
+Typing : exit/update field
+Typing : character/handle character
+Typing : help [verbose]/ open help page
+Typing : help [quiet]/ update status bar
+
+@enduml

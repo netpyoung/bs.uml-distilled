@@ -1,0 +1,52 @@
+@startuml
+
+node BrowserClient [
+    BrowserClient
+    ----
+    browser
+]
+
+node RichClient [
+    Rich Client
+    {OS = Windows}
+    ----
+    herculesClient.exe
+]
+
+node WebServer [
+    Web server
+    {OS = Solaris}
+    {web server = apache}
+    {number deployed = 3}
+    ----
+    herculesWeb.war
+    browser
+]
+
+node ApplicationServer {
+    rectangle jove [
+        JoveGL.exe
+        {vender = romanSoft}
+        {component = General Ledger}
+    ]
+
+    rectangle ejb [
+        EJB Container
+        ----
+        herculesBase.ear
+        herculesAR.ear
+        herculesAP.ear
+    ]
+
+    rectangle oracle [
+        Oracle DBMS
+    ]
+}
+
+BrowserClient -- WebServer
+RichClient -- WebServer
+
+WebServer - ApplicationServer
+ejb -- oracle
+
+@enduml

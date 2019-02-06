@@ -1,0 +1,20 @@
+@startuml
+
+object View {
+    Responsibilities
+    -- displays information
+    about the model
+}
+
+object Model {
+    -- domain logic
+}
+
+object InputController {
+    -- handle input events
+}
+
+View .> Model
+View <.. InputController
+Model <.. InputController
+@enduml

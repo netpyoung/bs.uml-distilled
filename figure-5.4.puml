@@ -1,0 +1,5 @@
+@startuml
+
+Polygon *-> "3..*" Point : {ordered}
+Point "1" <-* Circle : center
+@enduml

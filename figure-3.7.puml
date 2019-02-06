@@ -1,0 +1,12 @@
+@startuml
+
+object BenefitWindow
+object Employee
+object EmployeeDataGateway
+object BenefitsDataGateway
+
+BenefitWindow .> Employee
+Employee ..> EmployeeDataGateway
+Employee ..> BenefitsDataGateway
+
+@enduml

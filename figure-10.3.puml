@@ -1,0 +1,14 @@
+@startuml
+
+state UpdateHardwareWindow
+
+state Searching
+Searching : do/search for new hardware
+
+state DisplayNewHardwareWindow
+
+UpdateHardwareWindow -> Searching : search
+Searching -> UpdateHardwareWindow : cancel
+Searching --> DisplayNewHardwareWindow
+
+@enduml

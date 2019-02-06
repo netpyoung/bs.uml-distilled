@@ -1,0 +1,18 @@
+@startuml
+
+class Role {
+    - description
+}
+
+Company "*" - "*" Contract
+(Company, Contract) .. Role
+
+
+class Competency {
+    - description
+}
+
+Person "*" - "*" Skill
+(Person, Skill) .. Competency
+
+@enduml

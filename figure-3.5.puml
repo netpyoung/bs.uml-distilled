@@ -1,0 +1,5 @@
+@startuml
+
+Person "0..1" <-> "*" Car : Owns >
+
+@enduml
